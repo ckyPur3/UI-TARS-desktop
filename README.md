@@ -270,6 +270,7 @@ UI-TARS Desktop is a native GUI agent for your local computer, driven by [UI-TAR
 - 🖥️ Screenshot and visual recognition support
 - 🎯 Precise mouse and keyboard control
 - 💻 Cross-platform support (Windows/MacOS/Browser)
+- 📱 Mobile device support (Android via ADB, iOS via libimobiledevice)
 - 🔄 Real-time feedback and status display
 - 🔐 Private and secure - fully local processing
 
