@@ -16,12 +16,14 @@ Operator iOS SDK for UI-TARS using libimobiledevice.
 1. Install libimobiledevice tools:
 
 **macOS (using Homebrew):**
+
 ```bash
 brew install libimobiledevice
 brew install ideviceinstaller
 ```
 
 **Linux (Ubuntu/Debian):**
+
 ```bash
 sudo apt-get install libimobiledevice-utils
 sudo apt-get install ideviceinstaller
@@ -60,10 +62,10 @@ const screenshot = await operator.screenshot();
 await operator.execute({
   parsedPrediction: {
     action_type: 'click',
-    action_inputs: { start_box: '[100, 200, 150, 250]' }
+    action_inputs: { start_box: '[100, 200, 150, 250]' },
   },
   screenWidth: 390,
-  screenHeight: 844
+  screenHeight: 844,
 });
 ```
 
@@ -89,6 +91,7 @@ await operator.execute({
 ## Troubleshooting
 
 ### Device not detected
+
 ```bash
 # Check if device is connected
 idevice_id -l
@@ -98,11 +101,13 @@ idevicepair pair
 ```
 
 ### Permission issues
+
 - Ensure you've trusted the computer on your iOS device
 - Check that Xcode is installed (macOS only)
 - Verify libimobiledevice is properly installed
 
 ### Screenshot failures
+
 - Make sure the device screen is unlocked
 - Check USB connection is stable
 - Try running `idevicescreenshot test.png` manually to verify setup

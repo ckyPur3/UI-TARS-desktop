@@ -96,15 +96,15 @@ export class IosOperator extends Operator {
   public async screenshot(): Promise<ScreenshotOutput> {
     const { logger } = useContext();
     this.currentRound++;
-    
+
     try {
       // Create temporary file for screenshot
       const tempFile = join(tmpdir(), `ios-screenshot-${Date.now()}.png`);
-      
+
       // Capture screenshot using idevicescreenshot
       await commandWithTimeout(
         `idevicescreenshot -u ${this.deviceId} ${tempFile}`,
-        10000
+        10000,
       );
 
       // Read screenshot and convert to base64
@@ -214,11 +214,11 @@ export class IosOperator extends Operator {
           if (startX == null || startY == null) {
             throw new Error('The start_box is required for scroll action.');
           }
-          
+
           let endX = startX;
           let endY = startY;
           const scrollDistance = 100;
-          
+
           switch (direction) {
             case 'up':
               endY = startY - scrollDistance;
