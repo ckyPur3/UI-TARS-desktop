@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 import { AdbOperator } from '@gui-agent/operator-adb';
+import { IosOperator } from '@gui-agent/operator-ios';
 import { NutJSOperator } from '@gui-agent/operator-nutjs';
 import {
   LocalBrowserOperator,
@@ -12,6 +13,7 @@ import {
 
 const computerOperator = new NutJSOperator();
 const androidOperator = new AdbOperator();
+const iosOperator = new IosOperator('<device-udid>', 'http://localhost:8100');
 const browserOperator = new LocalBrowserOperator({
   searchEngine: SearchEngine.GOOGLE,
   showActionInfo: false,
@@ -27,4 +29,4 @@ const remoteBrowserOperator = new RemoteBrowserOperator({
   highlightClickableElements: true,
 });
 
-export { computerOperator, androidOperator, browserOperator, remoteBrowserOperator };
+export { computerOperator, androidOperator, iosOperator, browserOperator, remoteBrowserOperator };
